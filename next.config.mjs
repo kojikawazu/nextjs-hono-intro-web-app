@@ -1,14 +1,22 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // 以下ドメインへアクセスすることを許可します。
-    domains: [
-        'images.unsplash.com', 
-        'plus.unsplash.com', 
-        'storage.googleapis.com',
-        'asia-northeast1-cobalt-list-386722.cloudfunctions.net'
-    ]
-},
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'storage.googleapis.com',
+        pathname: '/intro_k_pub_bucket/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'asia-northeast1-cobalt-list-386722.cloudfunctions.net',
+      },
+    ],
+  },
   reactStrictMode: true,
 };
 
