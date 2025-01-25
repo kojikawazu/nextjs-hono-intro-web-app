@@ -21,5 +21,17 @@ npm i @google-cloud/storage
 ## Prettierの導入
 
 ```bash
-npm install --save-dev prettier eslint-config-prettier
+npm i --save-dev prettier eslint-config-prettier
+```
+
+## Redux Toolkitの導入
+
+```bash
+npm i @reduxjs/toolkit react-redux
+```
+
+## その他インストール
+
+```bash
+npm i classnames axios swiper
 ```
