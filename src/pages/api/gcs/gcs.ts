@@ -45,10 +45,10 @@ gcsRouter.get('/data', async (c) => {
         const bucketName = process.env.GCS_PRIVATE_BUCKET_NAME;
         const fileName = process.env.GCS_JSON_PATH;
 
-        const keyPath = process.env.GOOGLE_APPLICATION_CREDENTIALS || '/app/secrets/gcs/default.json';
-        console.log('Service Account Path:', keyPath);
-        const content = fs.readFileSync(keyPath, 'utf8');
-        console.log('Service Account Content:', content);
+        // const keyPath = process.env.GOOGLE_APPLICATION_CREDENTIALS || '/app/secrets/gcs/default.json';
+        // console.log('Service Account Path:', keyPath);
+        // const content = fs.readFileSync(keyPath, 'utf8');
+        // console.log('Service Account Content:', content);
 
         if (!bucketName || !fileName) {
             return c.json({ error: 'Bucket name or file name is not set' }, 400);
