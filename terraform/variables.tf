@@ -41,6 +41,19 @@ variable "app_name" {
   type = string
 }
 
+variable "custom_domain_name" {
+  type = string
+}
+
+variable "domain_zone_name" {
+  type = string
+}
+
+variable "domain_zone_dns_name" {
+  type = string
+}
+
+
 variable "backend_api_url" {
   type = string
 }
@@ -69,4 +82,6 @@ variable "resend_api_key" {
   type = string
 }
 
-
+variable "resend_send_domain" {
+  type = string
+}

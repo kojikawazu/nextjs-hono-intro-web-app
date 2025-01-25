@@ -31,6 +31,7 @@ jobs:
                   echo NODE_ENV=${{ secrets.NODE_ENV }} >> .env
                   echo MY_MAIL_ADDRESS=${{ secrets.MY_MAIL_ADDRESS }} >> .env
                   echo RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} >> .env
+                  echo RESEND_SEND_DOMAIN=${{ secrets.RESEND_SEND_DOMAIN }} >> .env
                   mkdir -p ./secrets/gcs/
 
             - name: Setup Google Cloud SDK
