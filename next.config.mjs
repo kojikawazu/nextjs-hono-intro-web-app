@@ -1,19 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
+    domains: ['storage.googleapis.com', 'images.unsplash.com'],
     remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
       {
         protocol: 'https',
         hostname: 'storage.googleapis.com',
         pathname: '/intro_k_pub_bucket/**',
-      },
-      {
-        protocol: 'https',
-        hostname: 'asia-northeast1-cobalt-list-386722.cloudfunctions.net',
       },
     ],
   },
