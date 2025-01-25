@@ -1,6 +1,5 @@
 import { Hono } from 'hono';
 import { Storage } from '@google-cloud/storage';
-import fs from 'fs';
 
 // GCSのインスタンスを作成
 const storage = new Storage();
@@ -22,7 +21,7 @@ async function fetchJsonFromGCS(bucketName: string, fileName: string): Promise<a
         console.log(`Fetching file from GCS: ${bucketName}/${fileName}`);
         const [content] = await file.download();
         console.log(`File content: ${content.toString()}`);
-        
+
         return JSON.parse(content.toString());
     } catch (error) {
         if (error instanceof Error) {
