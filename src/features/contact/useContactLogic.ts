@@ -2,7 +2,6 @@ import axios from 'axios';
 import { useDispatch, useSelector } from 'react-redux';
 // shared
 import { MESSAGES } from '@/shared/constants/constants';
-import { isEnvProd } from '@/shared/utils/utilities';
 import { customLog } from '@/shared/utils/logUtilities';
 import {
     isValidLength,
@@ -107,7 +106,7 @@ export const useContactLogic = () => {
                 dispatch(sendContactStart());
 
                 // APIエンドポイントとパラメータを設定
-                const API_ENDPOINT = "/api/mail/send";
+                const API_ENDPOINT = '/api/mail/send';
                 const emailData = {
                     name: contactName,
                     from: contactEmail,
