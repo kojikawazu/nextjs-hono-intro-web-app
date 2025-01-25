@@ -22,17 +22,6 @@ jobs:
               run: |
                   gcloud auth configure-docker ${{ secrets.GCP_REGION }}-docker.pkg.dev
 
-            - name: Create file
-              run: |
-                  echo ALLOWED_ORIGIN=${{ secrets.ALLOWED_ORIGIN }} > .env
-                  echo BACKEND_API_URL=${{ secrets.BACKEND_API_URL }} >> .env
-                  echo GCS_PRIVATE_BUCKET_NAME=${{ secrets.GCS_PRIVATE_BUCKET_NAME }} >> .env
-                  echo GCS_JSON_PATH=${{ secrets.GCS_JSON_PATH }} >> .env
-                  echo NODE_ENV=${{ secrets.NODE_ENV }} >> .env
-                  echo GOOGLE_APPLICATION_CREDENTIALS=/app/secrets/gcs/${{ secrets.GCS_SERVICE_ACCOUNT_KEY_NAME }} >> .env
-                  mkdir -p ./secrets/gcs/
-                  echo "${{ secrets.GCS_SERVICE_ACCOUNT_KEY }}" | sed 's/\\n/\n/g' > ./secrets/gcs/${{ secrets.GCS_SERVICE_ACCOUNT_KEY_NAME }}
-
             - name: Setup Google Cloud SDK
               uses: google-github-actions/setup-gcloud@v1
               with:
@@ -57,4 +46,5 @@ jobs:
                     --image ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.REPO_NAME }}/${{ secrets.APP_NAME }} \
                     --region ${{ secrets.GCP_REGION }} \
                     --platform managed \
-                    --allow-unauthenticated
+                    --allow-unauthenticated \
+                    --service-account=${{ secrets.GCP_CLOUD_RUN_SERVICE_ACCOUNT_KEY_NAME }}
