@@ -24,7 +24,6 @@ jobs:
 
             - name: Create file
               run: |
-                  touch .env
                   echo ALLOWED_ORIGIN=${{ secrets.ALLOWED_ORIGIN }} > .env
                   echo BACKEND_API_URL=${{ secrets.BACKEND_API_URL }} >> .env
                   echo GCS_PRIVATE_BUCKET_NAME=${{ secrets.GCS_PRIVATE_BUCKET_NAME }} >> .env
@@ -32,7 +31,6 @@ jobs:
                   echo NODE_ENV=${{ secrets.NODE_ENV }} >> .env
                   echo GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} >> .env
                   mkdir -p ./${{ secrets.GCS_SERVICE_ACCOUNT_DIR }}
-                  touch ./${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
                   echo ${{ secrets.GCS_SERVICE_ACCOUNT_KEY }} >> ./${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
 
             - name: Setup Google Cloud SDK
