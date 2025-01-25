@@ -7,7 +7,7 @@ const sendMailRouter = new Hono();
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 sendMailRouter.post('/send', async (c) => {
-    console.log(`${name}: use resend start...`);
+    console.log(`send mail start...`);
 
     try {
         const { name, from, subjects, messages } = await c.req.json();
