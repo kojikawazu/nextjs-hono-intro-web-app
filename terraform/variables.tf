@@ -82,4 +82,6 @@ variable "resend_api_key" {
   type = string
 }
 
-
+variable "resend_send_domain" {
+  type = string
+}

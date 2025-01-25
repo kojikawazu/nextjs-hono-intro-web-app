@@ -18,7 +18,7 @@ sendMailRouter.post('/send', async (c) => {
 
         console.log(`${name}: send mail...`);
         const response = await resend.emails.send({
-            from: 'Resend <kawa@resend.dev>',
+            from: `Resend <${process.env.RESEND_SEND_DOMAIN}@resend.dev>`,
             to: process.env.MY_MAIL_ADDRESS || 'no-reply@example.com',
             subject: subjects,
             html: `<p><b>From:</b> ${name} (${from})</p><p>${messages}</p>`,
