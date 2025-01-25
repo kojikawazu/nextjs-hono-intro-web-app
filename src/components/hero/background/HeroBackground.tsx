@@ -43,6 +43,10 @@ const HeroBackground: React.FC<HeroBackgroundProps> = ({
     const className = classNames(['w-full', 'h-[50vh]', 'sssm:h-screen']);
     const imageClassName = classNames(['w-full', 'h-[50vh]', 'sssm:h-screen']);
 
+    console.log(`url: ${url}`);
+    console.log(`encode url: ${encodeURIComponent(url)}`);
+    console.log(`decode url: ${decodeURIComponent(url)}`);
+
     componentJSX(HeroBackground);
     return (
         <div className={`relative ${className}`}>
