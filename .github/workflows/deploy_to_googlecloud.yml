@@ -29,8 +29,9 @@ jobs:
                   echo GCS_PRIVATE_BUCKET_NAME=${{ secrets.GCS_PRIVATE_BUCKET_NAME }} >> .env
                   echo GCS_JSON_PATH=${{ secrets.GCS_JSON_PATH }} >> .env
                   echo NODE_ENV=${{ secrets.NODE_ENV }} >> .env
+                  echo MY_MAIL_ADDRESS=${{ secrets.MY_MAIL_ADDRESS }} >> .env
+                  echo RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} >> .env
                   mkdir -p ./secrets/gcs/
-                  echo "${{ secrets.GCS_SERVICE_ACCOUNT_KEY }}" | sed 's/\\n/\n/g' > ./secrets/gcs/${{ secrets.GCS_SERVICE_ACCOUNT_KEY_NAME }}
 
             - name: Setup Google Cloud SDK
               uses: google-github-actions/setup-gcloud@v1

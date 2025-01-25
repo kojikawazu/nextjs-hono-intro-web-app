@@ -99,30 +99,15 @@ export const useContactLogic = () => {
      */
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        const envSendMailUrl =
-            (isEnvProd()
-                ? process.env.NEXT_PUBLIC_SEND_MAIL_URL_PROD
-                : process.env.NEXT_PUBLIC_SEND_MAIL_URL) || '';
 
         if (validate()) {
             // 確認ダイアログの表示
             if (window.confirm(CONFIRM_DATA)) {
-                // 開発環境の時は送付しない
-                //if (isEnvDev()) {
-                //    return ;
-                //}
-                // 環境変数(メール送付API)なければ送信不可
-                if (!envSendMailUrl) {
-                    dispatch(sendContactFailed('error'));
-                    handleSendNotice();
-                    return;
-                }
-
                 // メール送信のロジック
                 dispatch(sendContactStart());
 
                 // APIエンドポイントとパラメータを設定
-                const API_ENDPOINT = envSendMailUrl;
+                const API_ENDPOINT = "/api/mail/send";
                 const emailData = {
                     name: contactName,
                     from: contactEmail,

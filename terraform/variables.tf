@@ -61,7 +61,11 @@ variable "node_env" {
   type = string
 }
 
-variable "google_application_credentials" {
+variable "my_mail_address" {
+  type = string
+}
+
+variable "resend_api_key" {
   type = string
 }
 
