@@ -1,0 +1,19 @@
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:8080"
+    environment:
+      - NODE_ENV=production
+      - BACKEND_API_URL=${BACKEND_API_URL}
+      - GCS_PRIVATE_BUCKET_NAME=${GCS_PRIVATE_BUCKET_NAME}
+      - GCS_JSON_PATH=${GCS_JSON_PATH}
+      - ALLOWED_ORIGIN=${ALLOWED_ORIGIN}
+    volumes:
+      - .:/app:cached
+      - /app/node_modules
+      - /app/.next
+

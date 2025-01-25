@@ -1,0 +1,7 @@
+manuals
+node_modules
+private
+terraform
+npm-debug.log
+.next
+.DS_Store
