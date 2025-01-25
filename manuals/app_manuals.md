@@ -33,5 +33,5 @@ npm i @reduxjs/toolkit react-redux
 ## その他インストール
 
 ```bash
-npm i classnames axios swiper
+npm i classnames axios swiper resend
 ```

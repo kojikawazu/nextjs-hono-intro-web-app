@@ -3,6 +3,7 @@ import { handle } from '@hono/node-server/vercel';
 import type { PageConfig } from 'next';
 import { cors } from 'hono/cors';
 import gcsRouter from './gcs/gcs';
+import sendMailRouter from './mail/mail';
 
 // ページ設定
 export const config: PageConfig = { api: { bodyParser: false } };
@@ -35,5 +36,7 @@ app.get('/hello', (c) => {
 
 // GCSのルーティング
 app.route('/gcs', gcsRouter);
+// Mail送信のルーティング
+app.route('/mail', sendMailRouter);
 
 export default handle(app);
