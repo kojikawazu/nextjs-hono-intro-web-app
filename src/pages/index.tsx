@@ -1,15 +1,27 @@
-import GetJsonDataPage from '@/components/json/GetJsonDataPage';
-
+import NavBar from '@/components/navbar/NavBar';
+import Hero from '@/components/hero/Hero';
+import About from '@/components/about/About';
+import Careers from '@/components/careers/Careers';
+import Skills from '@/components/skills/Skills';
+import Contact from '@/components/contact/Contact';
+import Footer from '@/components/footer/Footer';
+import FrontArea from '@/components/front/FrontArea';
 /**
  * ホームページ
  * @returns JSX.Element
  */
 export default function Home() {
     return (
-        <div
-            className={`grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20`}
-        >
-            <GetJsonDataPage />
-        </div>
+        <>
+            <NavBar />
+            <Hero />
+            <About />
+            <Careers />
+            <Skills />
+            <Contact />
+            <Footer />
+            <FrontArea />
+            {/* <GetJsonDataPage /> */}
+        </>
     );
 }
