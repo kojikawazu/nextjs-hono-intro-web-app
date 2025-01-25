@@ -43,12 +43,10 @@ const HeroBackground: React.FC<HeroBackgroundProps> = ({
     const className = classNames(['w-full', 'h-[50vh]', 'sssm:h-screen']);
     const imageClassName = classNames(['w-full', 'h-[50vh]', 'sssm:h-screen']);
 
-    const decodedUrl = decodeURIComponent(url);
-
     componentJSX(HeroBackground);
     return (
         <div className={`relative ${className}`}>
-            <Image src={decodedUrl} alt={alt} fill />
+            <Image src={url} alt={alt} fill />
             <div
                 className={`absolute top-0 left-0 ${imageClassName} ${coverBackgroundColor}`}
             ></div>
