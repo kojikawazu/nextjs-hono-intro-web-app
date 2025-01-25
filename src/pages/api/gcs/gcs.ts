@@ -15,11 +15,23 @@ const gcsRouter = new Hono();
  */
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 async function fetchJsonFromGCS(bucketName: string, fileName: string): Promise<any> {
-    const bucket = storage.bucket(bucketName);
-    const file = bucket.file(fileName);
+    try {
+        const bucket = storage.bucket(bucketName);
+        const file = bucket.file(fileName);
 
-    const [content] = await file.download();
-    return JSON.parse(content.toString());
+        console.log(`Fetching file from GCS: ${bucketName}/${fileName}`);
+        const [content] = await file.download();
+        console.log(`File content: ${content.toString()}`);
+        
+        return JSON.parse(content.toString());
+    } catch (error) {
+        if (error instanceof Error) {
+            console.error(`Error fetching file from GCS: ${error.message}`, error);
+        } else {
+            console.error('An unknown error occurred:', error);
+        }
+        throw error;
+    }
 }
 
 // 動作確認用のエンドポイント

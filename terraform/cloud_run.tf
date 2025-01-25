@@ -51,10 +51,6 @@ resource "google_cloud_run_service" "nextjs_hono_intro_app_service" {
           name  = "NODE_ENV"
           value = var.node_env
         }
-        env {
-          name  = "GOOGLE_APPLICATION_CREDENTIALS"
-          value = var.google_application_credentials
-        }
       }
       service_account_name = google_service_account.cloud_run_sa.email
     }
