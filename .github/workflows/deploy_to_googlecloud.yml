@@ -24,14 +24,15 @@ jobs:
 
             - name: Create file
               run: |
-                  echo ALLOWED_ORIGIN=${{ secrets.ALLOWED_ORIGIN }} > ./app/.env
-                  echo BACKEND_API_URL=${{ secrets.BACKEND_API_URL }} >> ./app/.env
-                  echo GCS_PRIVATE_BUCKET_NAME=${{ secrets.GCS_PRIVATE_BUCKET_NAME }} >> ./app/.env
-                  echo GCS_JSON_PATH=${{ secrets.GCS_JSON_PATH }} >> ./app/.env
-                  echo NODE_ENV=${{ secrets.NODE_ENV }} >> ./app/.env
-                  echo GOOGLE_APPLICATION_CREDENTIALS=${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }} >> ./app/.env
-                  mkdir -p ./app/${{ secrets.GCS_SERVICE_ACCOUNT_DIR }}
-                  echo ${{ secrets.GCS_SERVICE_ACCOUNT_KEY }} >> ./app/${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+                  echo ALLOWED_ORIGIN=${{ secrets.ALLOWED_ORIGIN }} > .env
+                  echo BACKEND_API_URL=${{ secrets.BACKEND_API_URL }} >> .env
+                  echo GCS_PRIVATE_BUCKET_NAME=${{ secrets.GCS_PRIVATE_BUCKET_NAME }} >> .env
+                  echo GCS_JSON_PATH=${{ secrets.GCS_JSON_PATH }} >> .env
+                  echo NODE_ENV=${{ secrets.NODE_ENV }} >> .env
+                  echo MY_MAIL_ADDRESS=${{ secrets.MY_MAIL_ADDRESS }} >> .env
+                  echo RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} >> .env
+                  echo RESEND_SEND_DOMAIN=${{ secrets.RESEND_SEND_DOMAIN }} >> .env
+                  mkdir -p ./secrets/gcs/
 
             - name: Setup Google Cloud SDK
               uses: google-github-actions/setup-gcloud@v1
@@ -53,8 +54,9 @@ jobs:
 
             - name: Deploy to Cloud Run
               run: |
-                  gcloud run deploy ${{ secrets.APP_NAME }} \
+                  gcloud run deploy ${{ secrets.GCP_CLOUD_RUN_SERVICE_NAME }} \
                     --image ${{ secrets.GCP_REGION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ secrets.REPO_NAME }}/${{ secrets.APP_NAME }} \
                     --region ${{ secrets.GCP_REGION }} \
                     --platform managed \
-                    --allow-unauthenticated
+                    --allow-unauthenticated \
+                    --service-account=${{ secrets.GCP_CLOUD_RUN_SERVICE_ACCOUNT_KEY_NAME }}
