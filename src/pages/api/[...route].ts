@@ -34,14 +34,14 @@ app.use(
 // リクエストの検証ミドルウェア
 app.use('*', async (c, next) => {
     const token = c.req.header('authorization');
-  
+
     // Authorizationヘッダーのトークンを検証
     if (token !== `Bearer ${apiSecretToken}`) {
-      return c.json({ error: 'Unauthorized' }, 401);
+        return c.json({ error: 'Unauthorized' }, 401);
     }
-  
+
     await next();
-  });
+});
 
 // ルーティング
 app.get('/hello', (c) => {
