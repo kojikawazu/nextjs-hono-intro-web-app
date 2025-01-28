@@ -8,9 +8,9 @@ export const fetchIntroJsonData = async () => {
 
         const response = await fetch(`/api/gcs/data`, {
             headers: {
-                'Authorization': `Bearer ${apiSecretToken}`,
+                Authorization: `${apiSecretToken}`,
                 'Content-Type': 'application/json',
-            }
+            },
         });
         const data = await response.json();
         return data;
