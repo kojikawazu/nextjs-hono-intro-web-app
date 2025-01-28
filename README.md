@@ -32,7 +32,7 @@
 
 ## Architecture
 
-TODO...
+![Architecture](./architecture/architecture.drawio.png)
 
 ## Archived
 
