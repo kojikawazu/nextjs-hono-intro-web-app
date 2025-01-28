@@ -4,11 +4,12 @@
  */
 export const fetchIntroJsonData = async () => {
     try {
-        const apiSecretToken = process.env.API_SECRET_TOKEN || 'default-token';
+
+        const apiToken = process.env.NEXT_PUBLIC_API_TOKEN || 'default-token';
 
         const response = await fetch(`/api/gcs/data`, {
             headers: {
-                Authorization: `${apiSecretToken}`,
+                Authorization: `${apiToken}`,
                 'Content-Type': 'application/json',
             },
         });
