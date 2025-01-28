@@ -12,6 +12,8 @@ const app = new Hono().basePath('/api');
 
 // 許可するオリジンを設定（この開発プロジェクトのオリジンのみを指定）
 const allowedOrigin = process.env.ALLOWED_ORIGIN || 'http://localhost:3000';
+// セキュリティトークン
+const apiSecretToken = process.env.API_SECRET_TOKEN || 'default-token';
 
 // CORS ミドルウェアを追加
 app.use(
@@ -28,6 +30,18 @@ app.use(
         allowHeaders: ['Content-Type'],
     }),
 );
+
+// リクエストの検証ミドルウェア
+app.use('*', async (c, next) => {
+    const token = c.req.header('authorization');
+  
+    // Authorizationヘッダーのトークンを検証
+    if (token !== `Bearer ${apiSecretToken}`) {
+      return c.json({ error: 'Unauthorized' }, 401);
+    }
+  
+    await next();
+  });
 
 // ルーティング
 app.get('/hello', (c) => {

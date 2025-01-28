@@ -85,3 +85,7 @@ variable "resend_api_key" {
 variable "resend_send_domain" {
   type = string
 }
+
+variable "api_secret_token" {
+  type = string
+}

@@ -4,7 +4,14 @@
  */
 export const fetchIntroJsonData = async () => {
     try {
-        const response = await fetch(`/api/gcs/data`);
+        const apiSecretToken = process.env.API_SECRET_TOKEN || 'default-token';
+
+        const response = await fetch(`/api/gcs/data`, {
+            headers: {
+                'Authorization': `Bearer ${apiSecretToken}`,
+                'Content-Type': 'application/json',
+            }
+        });
         const data = await response.json();
         return data;
     } catch (error) {

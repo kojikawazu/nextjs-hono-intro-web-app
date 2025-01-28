@@ -63,6 +63,10 @@ resource "google_cloud_run_service" "nextjs_hono_intro_app_service" {
           name  = "RESEND_SEND_DOMAIN"
           value = var.resend_send_domain
         }
+        env {
+          name  = "API_SECRET_TOKEN"
+          value = var.api_secret_token
+        }
       }
       service_account_name = google_service_account.cloud_run_sa.email
     }
