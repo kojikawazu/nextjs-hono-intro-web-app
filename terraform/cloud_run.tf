@@ -64,8 +64,16 @@ resource "google_cloud_run_service" "nextjs_hono_intro_app_service" {
           value = var.resend_send_domain
         }
         env {
+          name  = "API_VALIDATE_SECRET_TOKEN"
+          value = var.api_validate_secret_token
+        }
+        env {
           name  = "API_SECRET_TOKEN"
           value = var.api_secret_token
+        }
+        env {
+          name  = "NEXT_PUBLIC_API_TOKEN"
+          value = var.next_public_api_token
         }
       }
       service_account_name = google_service_account.cloud_run_sa.email

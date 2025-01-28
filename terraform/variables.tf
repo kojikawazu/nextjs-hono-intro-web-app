@@ -86,6 +86,14 @@ variable "resend_send_domain" {
   type = string
 }
 
+variable "api_validate_secret_token" {
+  type = string
+}
+
 variable "api_secret_token" {
+  type = string
+}
+
+variable "next_public_api_token" {
   type = string
 }
