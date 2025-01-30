@@ -14,7 +14,7 @@
 
 以下URLで公開しています。
 
-[https://introtechkk.com/](https://introtechkk.com/)
+[該当サイト](https://introtechkk.com/)
 
 ## Tech Stack
 
