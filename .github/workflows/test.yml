@@ -21,7 +21,7 @@ jobs:
           echo BACKEND_API_URL=${{ secrets.BACKEND_API_URL }} >> .env.test
           echo GCS_PRIVATE_BUCKET_NAME=${{ secrets.GCS_PRIVATE_BUCKET_NAME }} >> .env.test
           echo GCS_JSON_PATH=${{ secrets.GCS_JSON_PATH }} >> .env.test
-          echo NODE_ENV=testing >> .env.test
+          echo NODE_ENV=test >> .env.test
           echo MY_MAIL_ADDRESS=${{ secrets.MY_MAIL_ADDRESS }} >> .env.test
           echo RESEND_API_KEY=${{ secrets.RESEND_API_KEY }} >> .env.test
           echo RESEND_SEND_DOMAIN=${{ secrets.RESEND_SEND_DOMAIN }} >> .env.test
