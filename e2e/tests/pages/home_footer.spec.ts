@@ -18,7 +18,9 @@ test('Footer is displayed', async ({ page }) => {
     // Footer Navigation Button
     const buttons = ['About', 'Career', 'Skills', 'Contact'];
     for (const button of buttons) {
-        const footerAboutButton = page.locator('footer').getByRole('button', { name: button, exact: true });
+        const footerAboutButton = page
+            .locator('footer')
+            .getByRole('button', { name: button, exact: true });
         await expect(footerAboutButton).toBeVisible();
     }
 
@@ -57,10 +59,10 @@ test('Footer Title Button is clicked', async ({ page }) => {
 
     // スクロールが完全にトップに到達するまで待機
     await page.waitForFunction(() => window.scrollY === 0, null, { timeout: 5000 });
-    
+
     // 先頭まで移動したことを確認する
     const scrollPosition = await page.evaluate(() => window.scrollY);
-    await expect(scrollPosition).toBe(0);    
+    await expect(scrollPosition).toBe(0);
 });
 
 test('Scroll to Top Button is clicked', async ({ page }) => {
@@ -69,8 +71,8 @@ test('Scroll to Top Button is clicked', async ({ page }) => {
 
     // スクロールが完全にトップに到達するまで待機
     await page.waitForFunction(() => window.scrollY === 0, null, { timeout: 5000 });
-    
+
     // 先頭まで移動したことを確認する
     const scrollPosition = await page.evaluate(() => window.scrollY);
-    await expect(scrollPosition).toBe(0);    
+    await expect(scrollPosition).toBe(0);
 });

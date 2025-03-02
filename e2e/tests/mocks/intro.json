@@ -81,9 +81,64 @@
                 "skills_card_icon": "https://placehold.co/51",
                 "skills_card_name": "Docker",
                 "skills_card_contents": "コンテナを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/52",
+                "skills_card_name": "React",
+                "skills_card_contents": "Reactを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/53",
+                "skills_card_name": "Next.js",
+                "skills_card_contents": "Next.jsを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/54",
+                "skills_card_name": "TypeScript",
+                "skills_card_contents": "TypeScriptを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/55",
+                "skills_card_name": "Next.js",
+                "skills_card_contents": "Next.jsを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/56",
+                "skills_card_name": "C#",
+                "skills_card_contents": "C#を用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/57",
+                "skills_card_name": "C++",
+                "skills_card_contents": "C++を用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/58",
+                "skills_card_name": "Python",
+                "skills_card_contents": "Pythonを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/59",
+                "skills_card_name": "Go",
+                "skills_card_contents": "Goを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/60",
+                "skills_card_name": "Echo",
+                "skills_card_contents": "Echoを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/61",
+                "skills_card_name": "Rust",
+                "skills_card_contents": "Rustを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/62",
+                "skills_card_name": "k8s",
+                "skills_card_contents": "k8sを用いた開発経験があります。"
             }
         ],
-        "skills_more": "and more...."
+        "skills_more": "and more..."
     },
     "contact_data": {
         "contact_name": "お名前",
