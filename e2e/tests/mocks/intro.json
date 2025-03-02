@@ -1,0 +1,97 @@
+{
+    "navbar_data": {
+        "link_title": "SampleProfile",
+        "about_name": "About",
+        "career_name": "Career",
+        "skills_name": "Skills",
+        "contact_name": "Contact"
+    },
+    "hero_data": {
+        "hero_img_url": "https://placehold.co/1200x600"
+    },
+    "about_data": {
+        "about_name": "K K",
+        "about_icon_url": "https://placehold.co/100x100",
+        "about_img_url": "https://placehold.co/400x400",
+        "sns_list": [
+            {
+                "sns_name": "x",
+                "sns_url": "https://twitter.com",
+                "sns_img": "https://placehold.co/32"
+            },
+            {
+                "sns_name": "github",
+                "sns_url": "https://github.com",
+                "sns_img": "https://placehold.co/32"
+            },
+            {
+                "sns_name": "zenn",
+                "sns_url": "https://zenn.dev",
+                "sns_img": "https://placehold.co/32"
+            },
+            {
+                "sns_name": "qiita",
+                "sns_url": "https://qiita.com",
+                "sns_img": "https://placehold.co/32"
+            }
+        ],
+        "about_contents": [
+            "これはダミーテキストです。",
+            "エンジニアとしての自己紹介文がここに入ります。",
+            "幅広い分野で活躍しています。"
+        ]
+    },
+    "career_title_data": {
+        "career_title_period": "期間",
+        "career_title_member": "チーム規模",
+        "career_title_contents": "プロジェクト内容",
+        "career_title_stack": "技術スタック",
+        "career_title_phase": "プロジェクトフェーズ",
+        "career_title_role": "チーム内での役割"
+    },
+    "career_data": [
+        {
+            "career_title": "サンプルプロジェクト1",
+            "career_start": "2022年1月",
+            "career_end": "2023年12月",
+            "career_member": "5名",
+            "career_contents": "プロジェクトの概要説明です。",
+            "career_skill_stack": [
+                "Ubuntu",
+                "Java",
+                "SpringBoot",
+                "Docker"
+            ],
+            "career_skill_phase": [
+                "設計",
+                "実装",
+                "テスト"
+            ],
+            "career_role": "開発メンバーとしてプロジェクトに参加。"
+        }
+    ],
+    "skills_data": {
+        "skills_cards": [
+            {
+                "skills_card_icon": "https://placehold.co/50",
+                "skills_card_name": "Java",
+                "skills_card_contents": "Javaを用いた開発経験があります。"
+            },
+            {
+                "skills_card_icon": "https://placehold.co/51",
+                "skills_card_name": "Docker",
+                "skills_card_contents": "コンテナを用いた開発経験があります。"
+            }
+        ],
+        "skills_more": "and more...."
+    },
+    "contact_data": {
+        "contact_name": "お名前",
+        "contact_email": "メールアドレス",
+        "contact_contents": "お問い合わせ内容",
+        "contact_btn_name": "送信"
+    },
+    "footer_data": {
+        "copyright": "@sampleprofile"
+    }
+}

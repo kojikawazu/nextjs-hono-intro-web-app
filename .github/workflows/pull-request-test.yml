@@ -1,0 +1,28 @@
+name: Pull Request Test
+
+on:
+    pull_request:
+        paths:
+            - '.github/**'
+            - '__tests__/**'
+            - 'e2e/**'
+            - 'public/**'
+            - 'src/**'
+            - '.eslintrc.js'
+            - 'Dockerfile'
+            - 'docker-compose.yml'
+            - 'jest.config.js'
+            - 'jest.setup.ts'
+            - 'eslint.config.js'
+            - 'next.config.mjs'
+            - 'package-lock.json'
+            - 'package.json'
+            - 'playwright.config.ts'
+            - 'postcss.config.js'
+            - 'tailwind.config.js'
+            - 'tsconfig.json'
+
+jobs:
+    test:
+        uses: ./.github/workflows/test.yml
+        secrets: inherit

@@ -4,9 +4,33 @@ on:
     push:
         branches:
             - main
+        paths:
+            - '.github/**'
+            - '__tests__/**'
+            - 'e2e/**'
+            - 'public/**'
+            - 'src/**'
+            - '.eslintrc.js'
+            - 'Dockerfile'
+            - 'docker-compose.yml'
+            - 'jest.config.js'
+            - 'jest.setup.ts'
+            - 'eslint.config.js'
+            - 'next.config.mjs'
+            - 'package-lock.json'
+            - 'package.json'
+            - 'playwright.config.ts'
+            - 'postcss.config.js'
+            - 'tailwind.config.js'
+            - 'tsconfig.json'
 
 jobs:
+    test:
+      uses: ./.github/workflows/test.yml
+      secrets: inherit
+
     deploy:
+        needs: test
         runs-on: ubuntu-latest
 
         steps:
@@ -41,7 +65,6 @@ jobs:
               uses: google-github-actions/setup-gcloud@v1
               with:
                   project_id: ${{ secrets.GCP_PROJECT_ID }}
-                  service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
 
             # - name: Verify IAM Policy
             #   run: |
