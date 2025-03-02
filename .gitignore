@@ -50,3 +50,7 @@ terraform.tfvars
 # other
 secrets/
 private/
+
+# reports
+jest-report/
+playwright-report/
