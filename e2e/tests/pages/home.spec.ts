@@ -20,5 +20,7 @@ test('Home page is displayed', async ({ page }) => {
 
 test('Hero is displayed', async ({ page }) => {
     // Image
-    await expect(page.locator('img[alt="hero_background"][src="https://placehold.co/1200x600"]')).toBeVisible();
+    await expect(
+        page.locator('img[alt="hero_background"][src="https://placehold.co/1200x600"]'),
+    ).toBeVisible();
 });

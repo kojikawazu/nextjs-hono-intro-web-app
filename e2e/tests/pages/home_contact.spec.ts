@@ -18,7 +18,7 @@ test('Contact is displayed', async ({ page }) => {
     // Contact Title
     const contactTitle = page.locator('div.text-5xl.underline', { hasText: 'Contact' });
     await expect(contactTitle).toBeVisible();
-    
+
     // Contact Name
     const contactName = page.getByLabel('お名前*:', { exact: false });
     await expect(contactName).toBeVisible();
@@ -56,7 +56,9 @@ test('Contact form validation', async ({ page }) => {
 test('Contact confirmation dialog is displayed', async ({ page }) => {
     await page.getByLabel('お名前*:', { exact: false }).fill('テスト太郎');
     await page.getByLabel('メールアドレス*:', { exact: false }).fill('test@example.com');
-    await page.getByLabel('お問い合わせ内容*:', { exact: false }).fill('お問い合わせのテストです。');
+    await page
+        .getByLabel('お問い合わせ内容*:', { exact: false })
+        .fill('お問い合わせのテストです。');
 
     await page.getByRole('button', { name: '送信' }).click();
 
@@ -69,7 +71,9 @@ test('Contact confirmation dialog is displayed', async ({ page }) => {
 test('Contact confirmation dialog is dismissed', async ({ page }) => {
     await page.getByLabel('お名前*:', { exact: false }).fill('テスト太郎');
     await page.getByLabel('メールアドレス*:', { exact: false }).fill('test@example.com');
-    await page.getByLabel('お問い合わせ内容*:', { exact: false }).fill('お問い合わせのテストです。');
+    await page
+        .getByLabel('お問い合わせ内容*:', { exact: false })
+        .fill('お問い合わせのテストです。');
 
     await page.getByRole('button', { name: '送信' }).click();
 
@@ -101,7 +105,9 @@ test('Contact form send', async ({ page }) => {
     // フォームに入力
     await page.getByLabel('お名前*:', { exact: false }).fill('テスト太郎');
     await page.getByLabel('メールアドレス*:', { exact: false }).fill('test@example.com');
-    await page.getByLabel('お問い合わせ内容*:', { exact: false }).fill('お問い合わせのテストです。');
+    await page
+        .getByLabel('お問い合わせ内容*:', { exact: false })
+        .fill('お問い合わせのテストです。');
 
     // window.confirmの対応をクリックの前に記述
     page.once('dialog', async (dialog) => {
@@ -112,5 +118,7 @@ test('Contact form send', async ({ page }) => {
     await page.getByRole('button', { name: '送信' }).click();
 
     // 送信成功の通知が表示されることを確認
-    await expect(page.getByText('送信しました！', { exact: false })).toBeVisible({ timeout: 10000 });
+    await expect(page.getByText('送信しました！', { exact: false })).toBeVisible({
+        timeout: 10000,
+    });
 });

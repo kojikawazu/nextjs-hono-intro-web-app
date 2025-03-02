@@ -4,7 +4,6 @@
  */
 export const fetchIntroJsonData = async () => {
     try {
-
         const apiToken = process.env.NEXT_PUBLIC_API_TOKEN || 'default-token';
 
         const response = await fetch(`/api/gcs/data`, {
