@@ -25,5 +25,7 @@ export default defineConfig({
         url: 'http://localhost:3000',
         // テストの実行環境の再利用
         reuseExistingServer: !process.env.CI,
+        // テストの実行環境のタイムアウト
+        timeout: 120 * 1000,
     },
 });
