@@ -115,11 +115,14 @@ export const useContactLogic = () => {
                 };
 
                 try {
+                    const apiToken = process.env.NEXT_PUBLIC_API_TOKEN || 'default-token';
                     const response = await axios.post(API_ENDPOINT, emailData, {
                         headers: {
+                            Authorization: `${apiToken}`,
                             'Content-Type': 'application/json',
                         },
                     });
+
                     if (response.status === 200) {
                         dispatch(sendContactSuccess());
                         handleSendNotice();
